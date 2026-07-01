@@ -48,21 +48,14 @@ function App() {
     },
   ]
 
-  const scrollToSection = (id) => {
-    const target = document.getElementById(id)
-    if (target) {
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' })
-    }
-  }
-
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
   const downloadCv = () => {
     const link = document.createElement('a')
-    link.href = '/Rodrigo_Faria_CV.pdf'
-    link.download = 'Rodrigo_Faria_CV.pdf'
+    link.href = '/Rodrigo_CV.pdf'
+    link.download = 'Rodrigo_CV.pdf'
     document.body.appendChild(link)
     link.click()
     link.remove()
@@ -121,7 +114,7 @@ function App() {
           <article className="hero-copy">
             <p className="hello-line">Hello, I&apos;m</p>
             <h1>RODRIGO FARIA</h1>
-            <p className="role-line">Computer Engineer & Aspiring Penetration Tester</p>
+            <p className="role-line">Junior AI Engineer & Cybersecurity Enthusiast</p>
 
             <p className="quote-line">&gt; I build intelligent systems - and know how to break them.</p>
 
