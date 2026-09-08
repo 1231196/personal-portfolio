@@ -4,25 +4,25 @@ import { getPostBySlug } from '../data/blogPosts'
 function renderBlock(block, index) {
   switch (block.type) {
     case 'h2':
-      return <h2 key={index}>{block.text}</h2>
+      return <h2 key={index} className="blog-type-line">{block.text}</h2>
     case 'h3':
-      return <h3 key={index}>{block.text}</h3>
+      return <h3 key={index} className="blog-type-line">{block.text}</h3>
     case 'ul':
       return (
         <ul key={index}>
           {block.items.map((item) => (
-            <li key={item}>{item}</li>
+            <li key={item} className="blog-type-line">{item}</li>
           ))}
         </ul>
       )
     case 'pre':
       return (
         <pre key={index}>
-          <code>{block.text}</code>
+          <code className="blog-type-line">{block.text}</code>
         </pre>
       )
     default:
-      return <p key={index}>{block.text}</p>
+      return <p key={index} className="blog-type-line">{block.text}</p>
   }
 }
 
