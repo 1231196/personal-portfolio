@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# you check robots.txt on every site, don't you?
+# there's more here if you're curious: /.well-known/security.txt

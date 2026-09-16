@@ -1,0 +1,9 @@
+# Hey, fellow pentester. Appreciate you checking this file - most people don't.
+Contact: mailto:rodrigopaimfaria@gmail.com
+Preferred-Languages: en, pt
+Canonical: https://rodrigofaria.me/.well-known/security.txt
+Expires: 2027-01-01T00:00:00.000Z
+
+# There's nothing to actually report here - it's a static portfolio, no backend.
+# But since you're the kind of person who reads this file: open the terminal
+# on the homepage and try `ls -a`, `id`, or `sudo -l`.

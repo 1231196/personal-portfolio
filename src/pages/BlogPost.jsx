@@ -1,28 +1,29 @@
 import { Link, Navigate, useParams } from 'react-router-dom'
 import { getPostBySlug } from '../data/blogPosts'
+import TerminalWindow from '../components/TerminalWindow'
 
 function renderBlock(block, index) {
   switch (block.type) {
     case 'h2':
-      return <h2 key={index} className="blog-type-line">{block.text}</h2>
+      return <h2 key={index}>{block.text}</h2>
     case 'h3':
-      return <h3 key={index} className="blog-type-line">{block.text}</h3>
+      return <h3 key={index}>{block.text}</h3>
     case 'ul':
       return (
         <ul key={index}>
           {block.items.map((item) => (
-            <li key={item} className="blog-type-line">{item}</li>
+            <li key={item}>{item}</li>
           ))}
         </ul>
       )
     case 'pre':
       return (
         <pre key={index}>
-          <code className="blog-type-line">{block.text}</code>
+          <code>{block.text}</code>
         </pre>
       )
     default:
-      return <p key={index} className="blog-type-line">{block.text}</p>
+      return <p key={index}>{block.text}</p>
   }
 }
 
@@ -35,13 +36,10 @@ function BlogPost() {
   }
 
   return (
-    <section className="terminal-wrap blog-post-block">
-      <p className="prompt-line">root@rfaria: /blog $ cat {post.slug}.md</p>
-
-      <Link to="/blog" className="blog-back-link">&lt; back_to_blog</Link>
-
-      <article className="blog-post">
-        <header className="blog-post-header">
+    <TerminalWindow title={`cat ${post.slug}.md`}>
+      <div className="blog-page">
+        <Link to="/" className="blog-back">&lt; cd ..</Link>
+        <article className="blog-article">
           <p className="blog-card-date">{post.date}</p>
           <h1>{post.title}</h1>
           <div className="blog-card-tags">
@@ -49,13 +47,10 @@ function BlogPost() {
               <span key={tag}>{tag}</span>
             ))}
           </div>
-        </header>
-
-        <div className="blog-post-content">
           {post.content.map((block, index) => renderBlock(block, index))}
-        </div>
-      </article>
-    </section>
+        </article>
+      </div>
+    </TerminalWindow>
   )
 }
 
